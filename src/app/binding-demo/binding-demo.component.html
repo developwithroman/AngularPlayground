@@ -1,0 +1,16 @@
+<div class="app-binding">
+  <input type="text" name="username" [(ngModel)]="username" id="username" />
+
+  <p>Entered Value : {{ username }}</p>
+
+  <img [src]="imageUrl" alt="" srcset="" />
+
+  <button
+    [disabled]="isDisabled()"
+    class="btn"
+    [ngClass]="{ 'btn-success': !isDisabled(), 'btn-secondary': isDisabled() }"
+    (click)="changeImageUrl()"
+  >
+    Event Binding Button
+  </button>
+</div>

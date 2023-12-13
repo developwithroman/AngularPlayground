@@ -1,0 +1,50 @@
+<div class="directives-demo">
+  <div class="row">
+    <div class="col col-md-3">
+      <button
+        class="btn btn-primary d-block mt-1"
+        (click)="filter(filterOption.DivisibleByTwo)"
+      >
+        Divisible by 2
+      </button>
+      <button
+        class="btn btn-success d-block mt-1"
+        (click)="filter(filterOption.DivisibleByThree)"
+      >
+        Divisible by 3
+      </button>
+      <button
+        class="btn btn-warning d-block mt-1"
+        (click)="filter(filterOption.DivisibleByFive)"
+      >
+        Divisible by 5
+      </button>
+      <button
+        class="btn btn-secondary d-block mt-1"
+        (click)="filter(filterOption.Reset)"
+      >
+        Reset
+      </button>
+    </div>
+    <div class="col col-md-9">
+      <div class="row">
+        <div class="col col-md-3" *ngFor="let num of numbers">
+          <div
+            class="p-1 text-center m-1"
+            [class.bg-primary]="
+              filterBy === filterOption.DivisibleByTwo && num % 2 === 0
+            "
+            [class.bg-success]="
+              filterBy === filterOption.DivisibleByThree && num % 3 === 0
+            "
+            [class.bg-warning]="
+              filterBy === filterOption.DivisibleByFive && num % 5 === 0
+            "
+          >
+            {{ num }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

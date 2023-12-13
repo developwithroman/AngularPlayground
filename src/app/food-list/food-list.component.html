@@ -1,0 +1,17 @@
+<div>
+  <h1>Food Lists</h1>
+  <app-food-filter (filterFood)="filterFood($event)"></app-food-filter>
+  <div class="row mt-4">
+    <div class="col col-md-3" *ngFor="let food of foodList">
+      <app-food-item
+        [food]="food"
+        [selectedCategory]="selectedCategory"
+        (onFoodSelected)="foodSelected($event)"
+      ></app-food-item>
+    </div>
+  </div>
+
+  <h4 class="p-4" *ngIf="selectedCategory">
+    The item Selected is {{ selectedCategory }}
+  </h4>
+</div>

@@ -1,0 +1,42 @@
+<div class="container mt-2">
+  <div class="card p-5 display-1" data-test-id="timer-value">
+    {{ timeRemaining | timeFormat }}
+  </div>
+  <button
+    (click)="start()"
+    data-test-id="start-button"
+    class="btn btn-success m-1 text-white"
+    [disabled]="isTimerRunning"
+  >
+    Start
+  </button>
+  <button
+    (click)="stop()"
+    class="btn btn-danger m-1 text-white"
+    data-test-id="stop-button"
+    [disabled]="!isTimerRunning"
+  >
+    Stop
+  </button>
+  <button
+    (click)="reset()"
+    data-test-id="reset-button"
+    class="btn btn-warning m-1"
+  >
+    Reset
+  </button>
+  <button
+    (click)="adjust(5)"
+    data-test-id="plus-button"
+    class="btn btn-info m-1 text-white"
+  >
+    +5
+  </button>
+  <button
+    (click)="adjust(-5)"
+    data-test-id="minus-button"
+    class="btn btn-info m-1 text-white"
+  >
+    -5
+  </button>
+</div>

@@ -1,0 +1,11 @@
+<button
+  (click)="foodSelected(food)"
+  class="w-100 btn"
+  [ngClass]="{
+    'btn-primary': itemSelected?.category === 'fruit',
+    'btn-success': itemSelected?.category === 'vegetable',
+    'btn-warning': itemSelected?.category === 'herb'
+  }"
+>
+  {{ food.name }}
+</button>

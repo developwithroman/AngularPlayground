@@ -1,0 +1,14 @@
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  li {
+    padding: 1 rem;
+    list-style: none;
+    margin: 1rem;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
